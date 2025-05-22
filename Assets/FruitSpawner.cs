@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class FruitSpawner : MonoBehaviour
 {
     public GameObject Fruit;
@@ -54,8 +55,7 @@ public class FruitSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
             SpawnFruit();
         }
