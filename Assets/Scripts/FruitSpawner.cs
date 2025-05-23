@@ -6,6 +6,9 @@ public class FruitSpawner : MonoBehaviour
     public GameObject Fruit;
     public Vector3 velocityToSet;
 
+    [Header("Spawn Area")]
+    public Collider Collider;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,7 +40,7 @@ public class FruitSpawner : MonoBehaviour
     {
         float x = Random.Range(-1.5f, 1.5f);
         float y = transform.position.y;
-        float z = Random.Range(-1.77f, -1.6f);
+        float z = Random.Range(-1.77f, -1.3f);
 
         return new Vector3(x, y, z);
     }
