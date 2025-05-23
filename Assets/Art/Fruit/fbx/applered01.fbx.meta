@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 4229311d794563d4e861dce43b624c5a
+guid: f735986196da1aa4d9159606c2fa465e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: colortex
-    second: {fileID: 2800000, guid: 2818adff5cde8704cb063d51e921880b, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
