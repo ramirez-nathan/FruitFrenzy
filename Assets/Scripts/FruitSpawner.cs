@@ -7,9 +7,10 @@ public class FruitSpawner : MonoBehaviour
     [Header("Fruit Prefabs")]
     public GameObject[] WholeFruits;
     // spawn fruit object with wholelayer
-    
+
 
     [Header("Spawn Settings")]
+    public Transform[] spawnPoints;
     public Vector3 velocityToSet;
     public float minSpawnInterval = 0.2f; // Minimum spawn interval
     public float maxSpawnInterval = 2f;   // Maximum spawn interval
@@ -23,7 +24,6 @@ public class FruitSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
         StartSpawning();
     }
 
@@ -66,10 +66,17 @@ public class FruitSpawner : MonoBehaviour
             Debug.LogWarning("No fruit prefabs assigned to FruitSpawner!");
             return;
         }
+        if (spawnPoints == null || spawnPoints.Length == 0)
+        {
+            Debug.LogWarning("No spawn points assigned!");
+            return;
+        }
+
+        Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
         GameObject selectedFruit = WholeFruits[Random.Range(0, WholeFruits.Length)];
 
-        GameObject fruit = Instantiate(selectedFruit, transform.position, transform.rotation);
+        GameObject fruit = Instantiate(selectedFruit, randomSpawnPoint.position, transform.rotation);
         Rigidbody rb = fruit.GetComponent<Rigidbody>();
         // adjust fruits gravity
         if (rb != null)

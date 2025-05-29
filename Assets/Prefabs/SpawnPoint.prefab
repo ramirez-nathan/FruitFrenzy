@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 155126434658688033}
   - component: {fileID: 4619325260385436688}
   - component: {fileID: 2678448899716655109}
-  - component: {fileID: 5276332152938558160}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -110,34 +109,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5276332152938558160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3010788780979035202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b08643e1318514993bc8b0b2fe2e86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WholeFruits:
-  - {fileID: 3453393428594324291, guid: f50bf13fe7e15ca43a430806d492c729, type: 3}
-  - {fileID: 3426983745688221405, guid: 0407541a5676e0544adfc68caf5130f2, type: 3}
-  - {fileID: 2733728125300715971, guid: c1dda5955ea093848aef3f1a3d672e1f, type: 3}
-  - {fileID: 2558337218128854727, guid: b6ef5ebf5258988408221c2e73ea0365, type: 3}
-  - {fileID: 7359966331922963336, guid: df69a4bd863230a458ceea709b7155db, type: 3}
-  - {fileID: 8732995903508315666, guid: 7bf81ca421eb6dc40846a222e244744b, type: 3}
-  - {fileID: 6043434967838269462, guid: c4aab3fffcdce474a84ea55131d054a4, type: 3}
-  - {fileID: 2512192215461248373, guid: 9ab1044613883b3448dbd08dbfecc109, type: 3}
-  - {fileID: 3033510230816957718, guid: e4c8e6f046a432240a1f6aeb6b2fd7a7, type: 3}
-  - {fileID: 7615621586223274892, guid: 4cb4b835e33161643bae8f79e2fedb07, type: 3}
-  - {fileID: 9106971138891337648, guid: 6da8cd369735854409a87b6feeec4def, type: 3}
-  - {fileID: 3833265764254558889, guid: 9bbf11bd13823ef42987738aa88f0d24, type: 3}
-  - {fileID: 861342049763597092, guid: 4c8dbc4911af2954fa19e9057d24cd9e, type: 3}
-  - {fileID: 4138540925353482419, guid: cd801703e987fd741ad76ff758c6d4b7, type: 3}
-  velocityToSet: {x: 0, y: 0, z: 0}
-  minSpawnInterval: 0.2
-  maxSpawnInterval: 2
-  Collider: {fileID: 0}

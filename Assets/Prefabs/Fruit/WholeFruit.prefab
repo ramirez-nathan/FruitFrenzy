@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6023125703927967627}
   - component: {fileID: 2000218669872421452}
   - component: {fileID: -4362723659314909992}
+  - component: {fileID: 6896992334846094847}
   m_Layer: 3
   m_Name: WholeFruit
   m_TagString: Untagged
@@ -110,7 +111,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -136,3 +137,16 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.10234113
   m_Center: {x: -0.00010757893, y: -0.00045746565, z: -0.0005517341}
+--- !u!114 &6896992334846094847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332958113735741156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf08ff2e83841e543923d21de0c01cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityScale: 0.7
