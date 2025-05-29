@@ -15,7 +15,7 @@ public class FruitSpawner : MonoBehaviour
     public float maxSpawnInterval = 2f;   // Maximum spawn interval
 
     [Header("Spawn Area")]
-    public Collider Collider;
+    public Collider Collider; // unused
 
     private Coroutine spawnCoroutine;
 
@@ -23,6 +23,7 @@ public class FruitSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         StartSpawning();
     }
 
