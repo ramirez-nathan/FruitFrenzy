@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrapesWhole
       objectReference: {fileID: 0}
+    - target: {fileID: 2332958113735741156, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6023125703927967627, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

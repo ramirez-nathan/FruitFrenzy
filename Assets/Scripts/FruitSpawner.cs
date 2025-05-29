@@ -1,29 +1,81 @@
+using System.Collections;
 using UnityEngine;
 
 
 public class FruitSpawner : MonoBehaviour
 {
-    public GameObject Fruit;
+    [Header("Fruit Prefabs")]
+    public GameObject[] WholeFruits;
+    // spawn fruit object with wholelayer
+    
+
+    [Header("Spawn Settings")]
     public Vector3 velocityToSet;
+    public float minSpawnInterval = 0.2f; // Minimum spawn interval
+    public float maxSpawnInterval = 2f;   // Maximum spawn interval
 
     [Header("Spawn Area")]
     public Collider Collider;
 
+    private Coroutine spawnCoroutine;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        StartSpawning();
+    }
 
+    public void StartSpawning()
+    {
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine);
+        }
+        spawnCoroutine = StartCoroutine(SpawnFruitRoutine());
+    }
+
+    public void StopSpawning()
+    {
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine);
+        }
+        
+    }
+
+    private IEnumerator SpawnFruitRoutine()
+    {
+        while (true)
+        {
+            // wait for a rand interval between min and max
+            float waitTime = Random.Range(minSpawnInterval, maxSpawnInterval);
+            yield return new WaitForSeconds(waitTime);
+
+            // spawn a fruit
+            SpawnFruit();
+        }
     }
 
     public void SpawnFruit()
     {
-        GameObject fruit = Instantiate(Fruit, GetRandSpawnPos(), transform.rotation);
+        // Check if we have fruit prefabs
+        if (WholeFruits == null || WholeFruits.Length == 0)
+        {
+            Debug.LogWarning("No fruit prefabs assigned to FruitSpawner!");
+            return;
+        }
+
+        GameObject selectedFruit = WholeFruits[Random.Range(0, WholeFruits.Length)];
+
+        GameObject fruit = Instantiate(selectedFruit, transform.position, transform.rotation);
         Rigidbody rb = fruit.GetComponent<Rigidbody>();
+        // adjust fruits gravity
         if (rb != null)
         {
-            rb.linearVelocity = velocityToSet.magnitude > 0 ? velocityToSet : new Vector3(Random.Range(-1f, 1f), 6f, -.3f);
-
             rb.angularVelocity = GetRandAngVel();
+
+            rb.linearVelocity = velocityToSet.magnitude > 0 ? velocityToSet : new Vector3(Random.Range(-0.2f, 0.2f), 3f, -.1f);
         }
     }
 
@@ -62,5 +114,6 @@ public class FruitSpawner : MonoBehaviour
         {
             SpawnFruit();
         }
+
     }
 }
