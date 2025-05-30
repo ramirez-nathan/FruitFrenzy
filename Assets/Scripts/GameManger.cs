@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,17 @@ public class GameManager : MonoBehaviour
         State = GameState.Play;
     }
 
+    private void LateUpdate()
+    {
+        if (State == GameState.Play)
+        {
 
+        }
+        else if (State == GameState.Lose)
+        {
+
+        }
+    }
 }
 public enum GameState
 {

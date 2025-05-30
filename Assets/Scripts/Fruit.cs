@@ -8,7 +8,7 @@ public class Fruit : MonoBehaviour
     private float apexTimer = 0f;
     bool isAtApex = false;
     public float apexThreshold = 1f;
-
+    [SerializeField] bool isBomba = false; // bomboclatt
 
     public float gravityScale = 0.5f;
     public float maxFallSpeed = -2.5f;
@@ -108,5 +108,19 @@ public class Fruit : MonoBehaviour
         // light air resistance when falling
         Vector3 dragForce = -velocity.normalized * downwardDrag * velocity.sqrMagnitude;
         rb.AddForce(dragForce, ForceMode.Force);
+    }
+
+    public void Slice()
+    {
+        if (isBomba)
+        {
+            GameManager.Instance.State = GameState.Lose;
+            return;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        
     }
 }
