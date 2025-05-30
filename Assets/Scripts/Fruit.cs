@@ -117,10 +117,12 @@ public class Fruit : MonoBehaviour
             GameManager.Instance.State = GameState.Lose;
             return;
         }
+        // spawn 2 half fruits with exit velocity
+
     }
 
     private void LateUpdate()
     {
-        
+        // nothing for now idk
     }
 }
