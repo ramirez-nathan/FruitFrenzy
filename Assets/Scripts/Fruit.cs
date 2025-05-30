@@ -3,24 +3,24 @@ using UnityEngine;
 [RequireComponent (typeof(Rigidbody))]
 public class Fruit : MonoBehaviour
 {
-    Rigidbody rb;
+    public Rigidbody rb;
     public Vector3 velocity;
     private float apexTimer = 0f;
     bool isAtApex = false;
-    public float apexThreshold = 0.05f;
+    public float apexThreshold = 1f;
 
 
     public float gravityScale = 0.5f;
     public float maxFallSpeed = -2.5f;
 
-    public float upwardGravityReduction = 1f;
+    public float upwardGravityReduction = 0.8f;
 
     [Tooltip("Duration to hover at apex")]
-    public float apexHoverTime = 0.3f;
+    public float apexHoverTime = 4f;
 
     [Tooltip("How much to reduce gravity at apex (0 = no gravity, 1 = full gravity)")]
     [Range(0f, 1f)]
-    public float apexGravityMultiplier = 1f;
+    public float apexGravityMultiplier = 0.15f;
 
     [Tooltip("Air resistance while moving upward/downward")]
     public float upwardDrag = 0.1f;
@@ -63,7 +63,7 @@ public class Fruit : MonoBehaviour
 
         // reduced gravity when moving up for floaty feel
         float reducedGravity = gravityScale * upwardGravityReduction;
-        Debug.Log($"upward gravity: {reducedGravity}");
+        //Debug.Log($"upward gravity: {Physics.gravity * reducedGravity}");
         rb.AddForce(Physics.gravity * reducedGravity, ForceMode.Acceleration);
 
         // add upward air resistance
@@ -83,16 +83,16 @@ public class Fruit : MonoBehaviour
 
         if (apexTimer < apexHoverTime)
         {
-            Debug.Log($"apex gravity: {Physics.gravity * gravityScale * apexGravityMultiplier}");
+            //Debug.Log($"apex gravity: {Physics.gravity * gravityScale * apexGravityMultiplier}");
             // reduced gravity at apex
             rb.AddForce(Physics.gravity * gravityScale * apexGravityMultiplier, ForceMode.Acceleration);
 
             // slight upward force to really suspend the fruit
-            rb.AddForce(Vector3.up * 0.03f, ForceMode.Force);
+            rb.AddForce(Vector3.up * 0.02f, ForceMode.Force);
         }
         else
         {
-            Debug.Log("applying falling physics from apex");
+            //Debug.Log("applying falling physics from apex");
             // transition back to normal falling
             ApplyFallingPhysics();
         }
