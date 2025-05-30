@@ -78,12 +78,13 @@ public class FruitSpawner : MonoBehaviour
 
         GameObject fruit = Instantiate(selectedFruit, randomSpawnPoint.position, transform.rotation);
         Rigidbody rb = fruit.GetComponent<Rigidbody>();
+
         // adjust fruits gravity
         if (rb != null)
         {
             rb.angularVelocity = GetRandAngVel();
 
-            rb.linearVelocity = velocityToSet.magnitude > 0 ? velocityToSet : new Vector3(Random.Range(-0.2f, 0.2f), 4f, -.1f);
+            rb.linearVelocity = velocityToSet.magnitude > 0 ? velocityToSet : new Vector3(Random.Range(-0.2f, 0.2f), 2.5f, -.1f);
         }
     }
 
