@@ -1288,10 +1288,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 834585970158335850, guid: 6a69f4f4734c54048b034963a787808e, type: 3}
-      propertyPath: WholeFruits.Array.size
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 834585970158335850, guid: 6a69f4f4734c54048b034963a787808e, type: 3}
       propertyPath: 'spawnPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 4503564317889019492}
@@ -1319,10 +1315,6 @@ PrefabInstance:
       propertyPath: 'spawnPoints.Array.data[6]'
       value: 
       objectReference: {fileID: 715837927}
-    - target: {fileID: 834585970158335850, guid: 6a69f4f4734c54048b034963a787808e, type: 3}
-      propertyPath: 'WholeFruits.Array.data[13]'
-      value: 
-      objectReference: {fileID: 8178651415821082354, guid: 34b24a6918dd0c24db1104ed6d525a4b, type: 3}
     - target: {fileID: 2766488571181218325, guid: 6a69f4f4734c54048b034963a787808e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.4547

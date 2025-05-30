@@ -84,7 +84,7 @@ public class FruitSpawner : MonoBehaviour
         {
             rb.angularVelocity = GetRandAngVel();
 
-            rb.linearVelocity = velocityToSet.magnitude > 0 ? velocityToSet : new Vector3(Random.Range(-0.2f, 0.2f), 3f, -.1f);
+            rb.linearVelocity = velocityToSet.magnitude > 0 ? velocityToSet : new Vector3(Random.Range(-0.2f, 0.2f), 3f, 0f);
         }
     }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 155126434658688033}
   - component: {fileID: 4619325260385436688}
   - component: {fileID: 2678448899716655109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010788780979035202}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!23 &4619325260385436688
 MeshRenderer:
   m_ObjectHideFlags: 0

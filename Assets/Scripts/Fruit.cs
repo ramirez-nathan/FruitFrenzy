@@ -16,7 +16,7 @@ public class Fruit : MonoBehaviour
     public float upwardGravityReduction = 0.8f;
 
     [Tooltip("Duration to hover at apex")]
-    public float apexHoverTime = 4f;
+    public float apexHoverTime = 5f;
 
     [Tooltip("How much to reduce gravity at apex (0 = no gravity, 1 = full gravity)")]
     [Range(0f, 1f)]
@@ -26,7 +26,11 @@ public class Fruit : MonoBehaviour
     public float upwardDrag = 0.1f;
     public float downwardDrag = 0.05f;
 
-    
+    private void Awake()
+    {
+        gameObject.layer = LayerMask.NameToLayer("WholeFruit");
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("WholeFruit"), LayerMask.NameToLayer("Bamboo"), true);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -88,7 +92,7 @@ public class Fruit : MonoBehaviour
             rb.AddForce(Physics.gravity * gravityScale * apexGravityMultiplier, ForceMode.Acceleration);
 
             // slight upward force to really suspend the fruit
-            rb.AddForce(Vector3.up * 0.02f, ForceMode.Force);
+            rb.AddForce(Vector3.up * 0.1f, ForceMode.Force);
         }
         else
         {
@@ -120,7 +124,10 @@ public class Fruit : MonoBehaviour
         // spawn 2 half fruits with exit velocity
 
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log($"{gameObject.name} collision with {collision.gameObject.name} | This layer: {gameObject.layer}, Other layer: {collision.gameObject.layer}");
+    }
     private void LateUpdate()
     {
         // nothing for now idk
