@@ -27,14 +27,14 @@ RectTransform:
   m_GameObject: {fileID: 1232478014886191943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.12027552, y: 0.12027552, z: 0.12027552}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2580571435214928216}
+  m_Father: {fileID: 9022612777519487213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.1, y: 0}
+  m_AnchoredPosition: {x: 0.2991085, y: 0.99999994}
   m_SizeDelta: {x: 2, y: 1.5255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9222853972135965553
@@ -102,14 +102,14 @@ RectTransform:
   m_GameObject: {fileID: 3078061897099377568}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.12027552, y: 0.12027552, z: 0.12027552}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2580571435214928216}
+  m_Father: {fileID: 9022612777519487213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: 0}
+  m_AnchoredPosition: {x: 0.55168724, y: 0.99999994}
   m_SizeDelta: {x: 2, y: 1.5255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2375398049203977397
@@ -315,9 +315,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.12027552, y: 0.12027552, z: 0.12027552}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3270242195277445351}
-  - {fileID: 2186598392738018726}
+  m_Children: []
   m_Father: {fileID: 9022612777519487213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -396,6 +394,8 @@ RectTransform:
   m_Children:
   - {fileID: 5682314463326226489}
   - {fileID: 2580571435214928216}
+  - {fileID: 3270242195277445351}
+  - {fileID: 2186598392738018726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
