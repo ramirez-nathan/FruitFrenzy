@@ -13,7 +13,7 @@ public class HalfFruit : MonoBehaviour
 
     public bool isFlipped;
 
-    public float separationForce = 2f;
+    public float separationForce = 4f;
 
     private void Awake()
     {
@@ -88,11 +88,19 @@ public class HalfFruit : MonoBehaviour
                 return isFlipped ? Vector3.left : Vector3.right;
         }
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Bamboo"))
         {
             Debug.Log($"destroying half fruit {this.gameObject.name}");
+            Destroy(gameObject);
+        }
+    }*/
+    private void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log($"{gameObject.name} collision with {collision.gameObject.name} | This layer: {gameObject.layer}, Other layer: {collision.gameObject.layer}");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Plane"))
+        {
             Destroy(gameObject);
         }
     }

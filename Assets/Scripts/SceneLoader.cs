@@ -22,6 +22,7 @@ using System.Collections;
 
 public class SceneLoader : MonoBehaviour
 {
+    //public static SceneLoader Instance; 
     public void LoadSceneByName(string sceneName)
     {
         Debug.Log("Start loading scene: " + sceneName);
@@ -41,6 +42,13 @@ public class SceneLoader : MonoBehaviour
         XRGeneralSettings.Instance.Manager.StartSubsystems();
         Debug.Log("XR initialized. Loading scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
+        GameManager.Instance.State = GameState.Play;
+        GameManager.Instance.SwitchToPlayState();
+    }
+
+    public void PlayGame()
+    {
+        GameManager.Instance.SwitchToPlayState();
     }
 
     public void QuitGame()

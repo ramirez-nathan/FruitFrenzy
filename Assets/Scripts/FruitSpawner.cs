@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -35,14 +36,13 @@ public class FruitSpawner : MonoBehaviour
         }
         spawnCoroutine = StartCoroutine(SpawnFruitRoutine());
     }
-
-    public void StopSpawning()
+    private void OnDisable()
     {
-        if (spawnCoroutine != null)
-        {
-            StopCoroutine(spawnCoroutine);
-        }
-        
+        StopAllCoroutines();
+    }
+    private void OnEnable()
+    {
+        StartSpawning();
     }
 
     private IEnumerator SpawnFruitRoutine()
@@ -119,10 +119,10 @@ public class FruitSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One))
+        /*if (OVRInput.GetDown(OVRInput.Button.One))
         {
             SpawnFruit();
-        }
+        }*/
 
     }
 }

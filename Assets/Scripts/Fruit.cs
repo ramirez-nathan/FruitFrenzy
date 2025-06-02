@@ -1,3 +1,5 @@
+using Oculus.Interaction;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody))]
@@ -27,7 +29,7 @@ public class Fruit : MonoBehaviour
     [Tooltip("Air resistance while moving upward/downward")]
     public float upwardDrag = 0.1f;
     public float downwardDrag = 0.05f;
-
+    public bool hasBeenSliced = false;
     private void Awake()
     {
         Debug.Assert(halfFruitPrefab != null,
@@ -121,6 +123,7 @@ public class Fruit : MonoBehaviour
 
     public void Slice()
     {
+        hasBeenSliced = true;
         if (isBomba)
         {
             GameManager.Instance.State = GameState.Lose;
@@ -128,6 +131,7 @@ public class Fruit : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.score++;
             SpawnHalfFruit(true); // is flipped
             SpawnHalfFruit(false); // isnt flipped
         }
@@ -160,7 +164,15 @@ public class Fruit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"{gameObject.name} collision with {collision.gameObject.name} | This layer: {gameObject.layer}, Other layer: {collision.gameObject.layer}");
+        //Debug.Log($"{gameObject.name} collision with {collision.gameObject.name} | This layer: {gameObject.layer}, Other layer: {collision.gameObject.layer}");
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Plane"))
+        {
+            if (!isBomba) GameManager.Instance.fails++;
+            Destroy(gameObject);
+        }
     }
     private void LateUpdate()
     {

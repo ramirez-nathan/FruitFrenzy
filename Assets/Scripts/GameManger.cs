@@ -8,22 +8,52 @@ public class GameManager : MonoBehaviour
 
     public GameState State;
 
+    public GameObject InGameCanvas;
+    public GameObject MenuCanvas;
+    public GameObject GameOverCanvas;
+    public GameObject FruitSpawner;
+
+    public int score = 0;
+    public int fails = 0;
+    public int highScore = 0;
     private void Awake()
     {
         Instance = this;
-        State = GameState.Play;
+        SwitchToMenu();
     }
 
     private void LateUpdate()
     {
-        if (State == GameState.Play)
+        if (State == GameState.Lose)
         {
-
+            GameOver();
         }
-        else if (State == GameState.Lose)
-        {
-
-        }
+    }
+    public void SwitchToPlayState()
+    {
+        State = GameState.Play;
+        FruitSpawner.gameObject.SetActive(true);    
+        if (score > highScore) highScore = score;
+        score = 0;
+        fails = 0;
+        InGameCanvas.SetActive(true);
+        InGameCanvas.GetComponent<Score>().ResetXs();
+        MenuCanvas.SetActive(false);
+        GameOverCanvas.SetActive(false);
+    }
+    public void SwitchToMenu() 
+    {
+        State = GameState.Menu;
+        InGameCanvas.SetActive(false);
+        MenuCanvas.SetActive(true);
+        GameOverCanvas.SetActive(false);
+    }
+    public void GameOver()
+    {
+        InGameCanvas.SetActive(false);
+        MenuCanvas.SetActive(false);
+        GameOverCanvas.SetActive(true);
+        FruitSpawner.gameObject.SetActive(false);
     }
 }
 public enum GameState
