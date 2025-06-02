@@ -7,7 +7,8 @@ public class Katana : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("WholeFruit"))
         {
-            //other.gameObject.GetComponent<Fruit>().ther
+            Debug.Log("Sword hit fruit");
+            other.gameObject.GetComponent<Fruit>().Slice();
         }
     }
 }

@@ -10,6 +10,8 @@ public class Fruit : MonoBehaviour
     public float apexThreshold = 1f;
     [SerializeField] bool isBomba = false; // bomboclatt
 
+    public GameObject halfFruitPrefab;
+
     public float gravityScale = 0.5f;
     public float maxFallSpeed = -2.5f;
 
@@ -28,6 +30,9 @@ public class Fruit : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Assert(halfFruitPrefab != null,
+                 $"{name} spawned without a Half Fruit reference!");
+        if (halfFruitPrefab != null ) Debug.Log($"{name} has correct reference to {halfFruitPrefab.name}"); 
         gameObject.layer = LayerMask.NameToLayer("WholeFruit");
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("WholeFruit"), LayerMask.NameToLayer("Bamboo"), true);
     }
@@ -121,9 +126,38 @@ public class Fruit : MonoBehaviour
             GameManager.Instance.State = GameState.Lose;
             return;
         }
+        else
+        {
+            SpawnHalfFruit(true); // is flipped
+            SpawnHalfFruit(false); // isnt flipped
+        }
         // spawn 2 half fruits with exit velocity
 
     }
+
+    public void SpawnHalfFruit(bool isFlipped)
+    {
+        GameObject halfFruit = Instantiate(halfFruitPrefab, transform.position, transform.rotation);
+        Rigidbody rb = halfFruit.GetComponent<Rigidbody>();
+        var halfFruitScript = halfFruit.GetComponent<HalfFruit>();
+        halfFruitScript.isFlipped = isFlipped;
+        if (rb != null)
+        {
+            rb.angularVelocity = this.rb.angularVelocity;
+        }
+        halfFruitScript.SetSpawnSpacingandRotation();
+        Destroy(gameObject);
+    }
+
+    public Vector3 GetRandAngVel()
+    {
+        float x = Random.Range(-2f, 2f);
+        float y = Random.Range(-2f, 2f);
+        float z = Random.Range(-2f, 2f);
+
+        return new Vector3(x, y, z);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log($"{gameObject.name} collision with {collision.gameObject.name} | This layer: {gameObject.layer}, Other layer: {collision.gameObject.layer}");

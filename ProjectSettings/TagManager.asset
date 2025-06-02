@@ -28,6 +28,7 @@ TagManager:
   - QDSUITextInputField
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
+  - sword
   layers:
   - Default
   - TransparentFX

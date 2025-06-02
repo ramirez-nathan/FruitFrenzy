@@ -76,6 +76,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: -6478536213147159724, guid: 093a4ce036e8d4641a4e76c999eee9eb, type: 3}
+    - target: {fileID: 6896992334846094847, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
+      propertyPath: halfFruit
+      value: 
+      objectReference: {fileID: 6808240181826791611, guid: bba6bb5522580004b82179f7bb839170, type: 3}
+    - target: {fileID: 6896992334846094847, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
+      propertyPath: halfFruitPrefab
+      value: 
+      objectReference: {fileID: 6808240181826791611, guid: bba6bb5522580004b82179f7bb839170, type: 3}
     m_RemovedComponents:
     - {fileID: -4362723659314909992, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
     m_RemovedGameObjects: []

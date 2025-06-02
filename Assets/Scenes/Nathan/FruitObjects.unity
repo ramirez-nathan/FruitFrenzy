@@ -1610,6 +1610,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8794255866043674294, guid: 7bf81ca421eb6dc40846a222e244744b, type: 3}
+      propertyPath: axisToManipulate
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2023,6 +2027,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2786564619219545782, guid: 1645f1900c2267d4882bf082d920371c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786564619219545782, guid: 1645f1900c2267d4882bf082d920371c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786564619219545782, guid: 1645f1900c2267d4882bf082d920371c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.614
       objectReference: {fileID: 0}
@@ -2060,6 +2072,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786564619219545782, guid: 1645f1900c2267d4882bf082d920371c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786564619219545782, guid: 1645f1900c2267d4882bf082d920371c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2798630413203208851, guid: 1645f1900c2267d4882bf082d920371c, type: 3}
@@ -2250,6 +2266,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7394402864528614727, guid: e0f4c440b5fa3e649b72b0c5963a4d62, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7394402864528614727, guid: e0f4c440b5fa3e649b72b0c5963a4d62, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.812

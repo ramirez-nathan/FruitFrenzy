@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2973197368894828526}
-  - component: {fileID: 8230199321649081531}
+  - component: {fileID: 2958360329147466814}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,8 +32,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9121142676094086057}
   m_LocalEulerAnglesHint: {x: -6.902, y: 0, z: 0}
---- !u!136 &8230199321649081531
-CapsuleCollider:
+--- !u!65 &2958360329147466814
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -50,11 +50,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.013099819
-  m_Height: 0.34075585
-  m_Direction: 1
-  m_Center: {x: 0.0010193717, y: 0.7093173, z: 0.022833047}
+  serializedVersion: 3
+  m_Size: {x: 0.02, y: 0.4, z: 0.02}
+  m_Center: {x: 0, y: 0.68, z: 0.038}
 --- !u!1 &6413440490822234159
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,10 +64,12 @@ GameObject:
   - component: {fileID: 9121142676094086057}
   - component: {fileID: 8295535946876202553}
   - component: {fileID: 3436701054186801178}
-  - component: {fileID: 5186121246752433339}
+  - component: {fileID: 3814318168928097374}
+  - component: {fileID: 4495075381132779178}
+  - component: {fileID: 8102507135477804675}
   m_Layer: 0
   m_Name: Katana
-  m_TagString: Untagged
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,8 +143,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5186121246752433339
-CapsuleCollider:
+--- !u!114 &3814318168928097374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6413440490822234159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477873a8fa099c5428dcc10e2e5abe1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &4495075381132779178
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6413440490822234159}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!65 &8102507135477804675
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,8 +200,6 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.011637028
-  m_Height: 0.48533177
-  m_Direction: 1
-  m_Center: {x: 0.0010193726, y: 0.39733958, z: 0.017726604}
+  serializedVersion: 3
+  m_Size: {x: 0.02, y: 0.5, z: 0.03}
+  m_Center: {x: 0, y: 0.4, z: 0.03}
