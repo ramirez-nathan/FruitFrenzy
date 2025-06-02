@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nathan/EvironmentIntegration.unity
     guid: 31838ca0d22528242a01e76fb4660913
+  - enabled: 1
+    path: Assets/Scenes/mrcarlin2003-dev/main.unity
+    guid: 6f9b7732e4d0b8946a3274b6bdeef4b1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: a975ff87077246c468fda6faeced2bc2, type: 2}
