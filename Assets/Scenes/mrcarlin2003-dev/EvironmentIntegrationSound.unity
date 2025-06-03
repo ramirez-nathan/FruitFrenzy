@@ -833,7 +833,13 @@ MonoBehaviour:
   - name: FruitSlice
     clip: {fileID: 8300000, guid: 012cd4a3c396ee74db92ef3a3a70aff3, type: 3}
     volume: 0.3
-    pitch: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fail
+    clip: {fileID: 8300000, guid: 92fde49cf208bc542b9113b27645b0a6, type: 3}
+    volume: 0.3
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &478216032

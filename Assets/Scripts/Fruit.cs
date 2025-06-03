@@ -127,6 +127,7 @@ public class Fruit : MonoBehaviour
         if (isBomba)
         {
             GameManager.Instance.State = GameState.Lose;
+            // play bomb sound
             return;
         }
         else
@@ -171,7 +172,15 @@ public class Fruit : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Plane"))
         {
-            if (!isBomba) GameManager.Instance.AddFail();
+            if (!isBomba)
+            {
+                GameManager.Instance.AddFail();
+                if (GameManager.Instance.State == GameState.Play)
+                {
+                    AudioManager.instance.Play("Fail"); // play fail sound
+                }
+            }
+
             Destroy(gameObject);
         }
     }
