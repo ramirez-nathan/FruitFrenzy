@@ -15,9 +15,17 @@ public class HalfFruit : MonoBehaviour
 
     public float separationForce = 4f;
 
+    private ParticleSystem juiceParticleEffect;
+
     private void Awake()
     {
         gameObject.layer = LayerMask.NameToLayer("HalfFruit");
+        juiceParticleEffect = GetComponentInChildren<ParticleSystem>();
+        if (juiceParticleEffect != null)
+        {
+            Debug.LogWarning($"{gameObject.name}: Juice Particle Effect not found!");
+        }
+        juiceParticleEffect.Play();
     }
     void Start()
     {
@@ -45,32 +53,31 @@ public class HalfFruit : MonoBehaviour
 
             switch (axisToManipulate)
             {
-            case 'x':
-                if (isFlipped) // flip local scale
-                {
-                    transform.localScale = new Vector3(-ls.x, ls.y, ls.z);
-                }
-                
-                break;
-            case 'y':
-                if (isFlipped) // flip local scale
-                {
-                    transform.localScale = new Vector3(ls.x, -ls.y, ls.z);
-                }
+                case 'x':
+                    if (isFlipped) // flip local scale
+                    {
+                        transform.localScale = new Vector3(-ls.x, ls.y, ls.z);
+                    }
 
-                break;
-            case 'z':
-                if (isFlipped) // flip local scale
-                {
-                    transform.localScale = new Vector3(-ls.x, ls.y, -ls.z);
-                }
+                    break;
+                case 'y':
+                    if (isFlipped) // flip local scale
+                    {
+                        transform.localScale = new Vector3(ls.x, -ls.y, ls.z);
+                    }
 
-                break;
+                    break;
+                case 'z':
+                    if (isFlipped) // flip local scale
+                    {
+                        transform.localScale = new Vector3(-ls.x, ls.y, -ls.z);
+                    }
+
+                    break;
             }
             rb.AddForce(separationDirection * separationForce, ForceMode.Impulse);
         }
         else Debug.LogWarning("half fruit rb is null! Something went wrong");
-        
     }
 
     private Vector3 GetSeparationDirection(bool isFlipped)
