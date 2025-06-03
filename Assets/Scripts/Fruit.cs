@@ -132,6 +132,7 @@ public class Fruit : MonoBehaviour
         else
         {
             GameManager.Instance.AddScore(1);
+            AudioManager.instance.Play("FruitSlice"); // play fruit slice sound
             SpawnHalfFruit(true); // is flipped
             SpawnHalfFruit(false); // isnt flipped
         }
