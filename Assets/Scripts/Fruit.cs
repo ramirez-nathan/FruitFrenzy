@@ -131,7 +131,7 @@ public class Fruit : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.score++;
+            GameManager.Instance.AddScore(1);
             SpawnHalfFruit(true); // is flipped
             SpawnHalfFruit(false); // isnt flipped
         }
@@ -170,7 +170,7 @@ public class Fruit : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Plane"))
         {
-            if (!isBomba) GameManager.Instance.fails++;
+            if (!isBomba) GameManager.Instance.AddFail();
             Destroy(gameObject);
         }
     }
