@@ -127,7 +127,7 @@ public class Fruit : MonoBehaviour
         if (isBomba)
         {
             GameManager.Instance.State = GameState.Lose;
-            // play bomb sound
+            AudioManager.instance.Play("Bomb"); // play bomb sound
             return;
         }
         else

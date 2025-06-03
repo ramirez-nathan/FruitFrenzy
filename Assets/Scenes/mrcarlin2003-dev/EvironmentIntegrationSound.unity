@@ -842,6 +842,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Bomb
+    clip: {fileID: 8300000, guid: 81f0ed8d103b4a242bc78a2341539ecd, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &478216032
 Transform:
   m_ObjectHideFlags: 0
