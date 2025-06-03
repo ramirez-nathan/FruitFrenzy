@@ -6,35 +6,37 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public TextMeshProUGUI score;
-    public int currFails = 0;
+
+    public int prevFails = 0;
     public Image redX1;
     public Image redX2;
     public Image redX3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currFails = 0;
+        prevFails = 0;
     }
     private void OnEnable()
     {
-        currFails = 0;
+        prevFails = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateScore();
+        //AddScore();
+        CheckForFailUpdate();
     }
 
     public void UpdateScore()
     {
-        score.text = "Score: " + GameManager.Instance.score.ToString();
-        CheckForFailUpdate();
+        score.text = "Score: " + GameManager.Instance.score.ToString() + "\nBest: " + GameManager.Instance.highScore.ToString();
         
     }
     public void CheckForFailUpdate()
     {
-        if (currFails < GameManager.Instance.fails)
+        if (prevFails < GameManager.Instance.fails)
         {
             Debug.Log("failed, adding x");
             if (GameManager.Instance.fails > 2)
@@ -54,7 +56,7 @@ public class Score : MonoBehaviour
                 redX1.color = new Color(1f, 1f, 1f, 1f);
             }
         }
-        currFails = GameManager.Instance.fails;
+        prevFails = GameManager.Instance.fails;
     }
     public void ResetXs()
     {

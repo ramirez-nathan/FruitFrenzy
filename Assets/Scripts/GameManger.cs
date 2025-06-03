@@ -7,11 +7,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameState State;
-
+    public Score scoreScript;
     public GameObject InGameCanvas;
     public GameObject MenuCanvas;
     public GameObject GameOverCanvas;
     public GameObject FruitSpawner;
+    private FruitSpawner fruitSpawnerScript;
 
     public int score = 0;
     public int fails = 0;
@@ -19,11 +20,20 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        // Get reference to FruitSpawner script
+        if (FruitSpawner != null)
+        {
+            fruitSpawnerScript = FruitSpawner.GetComponent<FruitSpawner>();
+        }
         SwitchToMenu();
     }
 
     private void LateUpdate()
     {
+        if (State == GameState.Play)
+        {
+            if (score > highScore) highScore = score;
+        }
         if (State == GameState.Lose)
         {
             GameOver();
@@ -36,6 +46,7 @@ public class GameManager : MonoBehaviour
         if (score > highScore) highScore = score;
         score = 0;
         fails = 0;
+        scoreScript.UpdateScore();
         InGameCanvas.SetActive(true);
         InGameCanvas.GetComponent<Score>().ResetXs();
         MenuCanvas.SetActive(false);
@@ -55,6 +66,27 @@ public class GameManager : MonoBehaviour
         GameOverCanvas.SetActive(true);
         FruitSpawner.gameObject.SetActive(false);
     }
+    public void UpdateScore()
+    {
+        scoreScript.UpdateScore();
+        
+    }
+    public void AddScore(int points)
+    {
+        score += points;
+        UpdateScore(); // This will update both score UI and difficulty
+
+        // Debug log to see difficulty changes
+        if (fruitSpawnerScript != null && fruitSpawnerScript.useDynamicDifficulty)
+        {
+            Debug.Log(fruitSpawnerScript.GetDifficultyInfo());
+        }
+    }
+    public void AddFail()
+    {
+        fails++;
+    }
+    
 }
 public enum GameState
 {
