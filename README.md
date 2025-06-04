@@ -10,6 +10,16 @@ Fruit Frenzy VR is a fast-paced, arcade-style virtual reality game developed in 
 - In-game scoring system
 - Built and deployed on Meta Quest 2
 
+## Visual Effects
+
+Fruit Frenzy VR includes custom-designed particle effects for immersive gameplay feedback:
+
+<p align="center">
+  <img src="BombExplosion.gif" alt="Bomb Explosion" width="250"/>
+  <img src="CannonSmoke.gif" alt="Cannon Smoke" width="250"/>
+  <img src="WindwakerWind.gif" alt="Wind Waker Wind" width="250"/>
+</p>
+
 ## What is Unity?
 
 [Unity](https://unity.com/) is a cross-platform game engine widely used for developing both 2D and 3D interactive experiences. It offers a powerful real-time editor, a comprehensive suite of tools, and strong support for XR development.
