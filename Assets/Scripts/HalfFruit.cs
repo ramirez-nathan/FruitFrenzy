@@ -13,13 +13,14 @@ public class HalfFruit : MonoBehaviour
 
     public bool isFlipped;
 
-    public float separationForce = 4f;
+    public float separationForce = 0.2f;
 
     private ParticleSystem juiceParticleEffect;
 
     private void Awake()
     {
         gameObject.layer = LayerMask.NameToLayer("HalfFruit");
+        rb = GetComponent<Rigidbody>();
         juiceParticleEffect = GetComponentInChildren<ParticleSystem>();
         if (juiceParticleEffect != null)
         {
@@ -29,7 +30,7 @@ public class HalfFruit : MonoBehaviour
     }
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); 
+        
     }
 
     void FixedUpdate()
@@ -50,7 +51,7 @@ public class HalfFruit : MonoBehaviour
             var ls = transform.localScale;
             var newSpacing = transform.position;
             Vector3 separationDirection = GetSeparationDirection(isFlipped);
-
+            Debug.Log("setting spawn spacing and rotation ");
             switch (axisToManipulate)
             {
                 case 'x':
@@ -70,7 +71,7 @@ public class HalfFruit : MonoBehaviour
                 case 'z':
                     if (isFlipped) // flip local scale
                     {
-                        transform.localScale = new Vector3(-ls.x, ls.y, -ls.z);
+                        transform.localScale = new Vector3(ls.x, ls.y, -ls.z);
                     }
 
                     break;

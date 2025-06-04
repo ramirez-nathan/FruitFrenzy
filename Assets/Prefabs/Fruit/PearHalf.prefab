@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  axisToManipulate: 121
+  axisToManipulate: 0
   spawnSpacingDist: 0
   isFlipped: 0
-  separationForce: 2
+  separationForce: 0.2

@@ -39,6 +39,7 @@ public class Fruit : MonoBehaviour
     {
         Debug.Assert(halfFruitPrefab != null,
                  $"{name} spawned without a Half Fruit reference!");
+        rb = GetComponent<Rigidbody>();
         if (halfFruitPrefab != null) Debug.Log($"{name} has correct reference to {halfFruitPrefab.name}");
         gameObject.layer = LayerMask.NameToLayer("WholeFruit");
         if (isBomba) sparkParticleEffect.Play();
@@ -48,7 +49,7 @@ public class Fruit : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody>();  
+        
     }
 
     // Update is called once per frame
@@ -138,12 +139,14 @@ public class Fruit : MonoBehaviour
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponentInChildren<ParticleSystem>().Play(); 
             GameManager.Instance.State = GameState.Lose;
+            AudioManager.instance.PlaySoundByName("BombExplode", false); // play bomb sound
             Destroy(gameObject);
             return;
         }
         else
         {
             GameManager.Instance.AddScore(1);
+            AudioManager.instance.PlaySoundByName("FruitSlice", true); // play fruit slice sound
             SpawnHalfFruit(true); // is flipped
             SpawnHalfFruit(false); // isnt flipped
             //juiceParticleEffect.Play();
@@ -184,7 +187,20 @@ public class Fruit : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Plane"))
         {
-            if (!isBomba && GameManager.Instance.State == GameState.Play) GameManager.Instance.AddFail();
+            if (!isBomba)
+            {
+                GameManager.Instance.AddFail();
+                if (GameManager.Instance.State == GameState.Play)
+                {
+                    AudioManager.instance.PlaySoundByName("Fail", false); // play fail sound
+                }
+            }
+
+            if (!isBomba && GameManager.Instance.State == GameState.Play)
+            {
+                GameManager.Instance.AddFail();
+                AudioManager.instance.PlaySoundByName("Fail", false); // play fail sound
+            }
             Destroy(gameObject);
         }
     }
