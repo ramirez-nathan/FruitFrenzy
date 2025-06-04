@@ -138,7 +138,8 @@ public class Fruit : MonoBehaviour
             GameManager.Instance.AddScore(1);
             SpawnHalfFruit(true); // is flipped
             SpawnHalfFruit(false); // isnt flipped
-            juiceParticleEffect.Play();
+            //juiceParticleEffect.Play();
+            Destroy(gameObject); // destroy self
         }
         // spawn 2 half fruits with exit velocity
 
@@ -155,7 +156,7 @@ public class Fruit : MonoBehaviour
             rb.angularVelocity = this.rb.angularVelocity;
         }
         halfFruitScript.SetSpawnSpacingandRotation();
-        Destroy(gameObject);
+       
     }
 
     public Vector3 GetRandAngVel()
