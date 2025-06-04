@@ -134,6 +134,7 @@ public class Fruit : MonoBehaviour
         if (isBomba)
         {
             var explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            explosion.gameObject.SetActive(true);
             explosion.GetComponent<ParticleSystem>().Play();
             explosion.GetComponentInChildren<ParticleSystem>().Play(); 
             GameManager.Instance.State = GameState.Lose;
@@ -183,7 +184,7 @@ public class Fruit : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Plane"))
         {
-            if (!isBomba) GameManager.Instance.AddFail();
+            if (!isBomba && GameManager.Instance.State == GameState.Play) GameManager.Instance.AddFail();
             Destroy(gameObject);
         }
     }

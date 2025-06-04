@@ -36,7 +36,11 @@ public class GameManager : MonoBehaviour
     {
         if (State == GameState.Play)
         {
-            if (score > highScore) highScore = score;
+            if (score > highScore)
+            {
+                highScore = score;
+                UpdateScore();
+            }
         }
         if (State == GameState.Lose)
         {
