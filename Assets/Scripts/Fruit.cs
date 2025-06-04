@@ -127,13 +127,13 @@ public class Fruit : MonoBehaviour
         if (isBomba)
         {
             GameManager.Instance.State = GameState.Lose;
-            AudioManager.instance.Play("Bomb"); // play bomb sound
+            AudioManager.instance.Play("Bomb", false); // play bomb sound
             return;
         }
         else
         {
             GameManager.Instance.AddScore(1);
-            AudioManager.instance.Play("FruitSlice"); // play fruit slice sound
+            AudioManager.instance.Play("FruitSlice", true); // play fruit slice sound
             SpawnHalfFruit(true); // is flipped
             SpawnHalfFruit(false); // isnt flipped
         }
@@ -177,7 +177,7 @@ public class Fruit : MonoBehaviour
                 GameManager.Instance.AddFail();
                 if (GameManager.Instance.State == GameState.Play)
                 {
-                    AudioManager.instance.Play("Fail"); // play fail sound
+                    AudioManager.instance.Play("Fail", false); // play fail sound
                 }
             }
 

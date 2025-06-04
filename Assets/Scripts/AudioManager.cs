@@ -1,8 +1,8 @@
 using UnityEngine.Audio;
-using System;
 using UnityEngine;
 using System.Diagnostics;
 using System.Collections;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
@@ -44,12 +44,17 @@ public class AudioManager : MonoBehaviour
     //    Play("ThemeLoop"); // Play ThemeLoop immediately after ThemeIntro finishes
     //}
 
-    public void Play(string name)
+    public void Play(string name, bool isSliceSound)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null) // don't play a sound that doesn't exist
         {
             return;
+        }
+        if (isSliceSound)
+        {
+            var randPitch = UnityEngine.Random.Range(0.6f, 1.3f);
+            s.source.pitch = randPitch;
         }
         s.source.Play();
     }
