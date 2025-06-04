@@ -1,10 +1,19 @@
 # ninja log v5
 25	3137	7705292520370341	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	612f83ffa8e09827
 41	3168	7705292520542343	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1f17e4d86c5e7dc5
-1	3180	7705292520807690	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	6c5cb63ad4abe870
-65	3194	7705292520955678	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	5beb52d3f12674ba
-10	3305	7705292522215253	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7583553e0239767a
-33	3724	7705292526442819	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	6f5de321ca3fd22e
 49	3746	7705292526671487	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	957241dd4af7de2f
+1	3180	7705292520807690	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	6c5cb63ad4abe870
+10	3305	7705292522215253	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7583553e0239767a
+65	3194	7705292520955678	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	5beb52d3f12674ba
+33	3724	7705292526442819	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	6f5de321ca3fd22e
 18	3942	7705292528621938	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	14a357f567025f53
 3942	4167	7705292530938454	C:/Users/nater/FruitFrenzy/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/24395718/obj/arm64-v8a/libgame.so	81cd98feff09e63c
+27	3832	7707077967510744	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1f17e4d86c5e7dc5
+75	3843	7707077967726888	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	612f83ffa8e09827
+16	3913	7707077968432878	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	6c5cb63ad4abe870
+57	3916	7707077968488733	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	5beb52d3f12674ba
+49	4031	7707077970049424	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7583553e0239767a
+84	4546	7707077975048281	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	957241dd4af7de2f
+66	4549	7707077975101034	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	6f5de321ca3fd22e
+40	4655	7707077976257824	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	14a357f567025f53
+4655	4906	7707077978900188	C:/Users/nater/FruitFrenzy/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/24395718/obj/arm64-v8a/libgame.so	81cd98feff09e63c

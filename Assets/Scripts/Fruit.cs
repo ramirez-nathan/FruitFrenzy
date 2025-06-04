@@ -14,6 +14,8 @@ public class Fruit : MonoBehaviour
 
     // Fruit particles
     private ParticleSystem juiceParticleEffect;
+    public ParticleSystem sparkParticleEffect;
+    public GameObject explosionEffect;
 
     public GameObject halfFruitPrefab;
 
@@ -39,6 +41,7 @@ public class Fruit : MonoBehaviour
                  $"{name} spawned without a Half Fruit reference!");
         if (halfFruitPrefab != null) Debug.Log($"{name} has correct reference to {halfFruitPrefab.name}");
         gameObject.layer = LayerMask.NameToLayer("WholeFruit");
+        if (isBomba) sparkParticleEffect.Play();
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("WholeFruit"), LayerMask.NameToLayer("Bamboo"), true);
         juiceParticleEffect = GetComponentInChildren<ParticleSystem>();
     }
@@ -130,7 +133,11 @@ public class Fruit : MonoBehaviour
         hasBeenSliced = true;
         if (isBomba)
         {
+            var explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            explosion.GetComponent<ParticleSystem>().Play();
+            explosion.GetComponentInChildren<ParticleSystem>().Play(); 
             GameManager.Instance.State = GameState.Lose;
+            Destroy(gameObject);
             return;
         }
         else
