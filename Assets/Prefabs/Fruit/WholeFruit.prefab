@@ -150,19 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf08ff2e83841e543923d21de0c01cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  apexThreshold: 1
-  isBomba: 0
-  halfFruitPrefab: {fileID: 0}
-  gravityScale: 0.5
-  maxFallSpeed: -2.5
-  upwardGravityReduction: 0.8
-  apexHoverTime: 5
-  apexGravityMultiplier: 0.15
-  upwardDrag: 0.1
-  downwardDrag: 0.05
+  points: 1
   hasBeenSliced: 0
+  hasBeenProcessed: 0
+  slicedVersion: {fileID: 0}
+  sliceSound: {fileID: 0}
 --- !u!1 &6120768682697842134
 GameObject:
   m_ObjectHideFlags: 0

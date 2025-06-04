@@ -1073,8 +1073,15 @@ MonoBehaviour:
   score: 0
   fails: 0
   highScore: 0
-  inComboWindow: 0
   comboWindowTime: 0
+  velocityThreshold: 0.5
+  minComboSize: 3
+  inComboWindow: 0
+  currentGestureFruits: []
+  comboPopupPrefab: {fileID: 0}
+  comboUIParent: {fileID: 0}
+  leftKatanaVelocity: 0
+  rightKatanaVelocity: 0
 --- !u!1 &698220620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5117855126432091822, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
@@ -3162,6 +3169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightKatana
       objectReference: {fileID: 0}
+    - target: {fileID: 8650481338259359160, guid: a04645d8876d1a448ad847390068b125, type: 3}
+      propertyPath: katanaId
+      value: Right
+      objectReference: {fileID: 0}
     - target: {fileID: 9121142676094086057, guid: a04645d8876d1a448ad847390068b125, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -3435,6 +3446,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 620910700}
   m_SourcePrefab: {fileID: 100100000, guid: 1e8f855f51747b3458ce4037ec3bbf31, type: 3}
+--- !u!1001 &5804684771302419126
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4557647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.481
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.089
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596875080236148237, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266647295391715559, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
+      propertyPath: m_Name
+      value: ComboPopup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d9adf936879afd4fa1134da9dd49079, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3450,3 +3518,4 @@ SceneRoots:
   - {fileID: 1531002114}
   - {fileID: 487383981}
   - {fileID: 753706097}
+  - {fileID: 5804684771302419126}
