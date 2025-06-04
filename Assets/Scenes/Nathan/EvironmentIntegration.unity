@@ -2876,6 +2876,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3204425576267414576, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.229
+      objectReference: {fileID: 0}
     - target: {fileID: 3994367943537297622, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

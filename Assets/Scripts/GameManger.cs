@@ -125,7 +125,6 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         if (score > highScore) highScore = score;
-        if (score >= 100) // I want to do every 100 pts, erase a fail
         UpdateScore(); // This will update both score UI and difficulty
 
         // Debug log to see difficulty changes
