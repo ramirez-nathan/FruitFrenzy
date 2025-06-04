@@ -32,7 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,6 +153,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   apexThreshold: 1
   isBomba: 0
+  halfFruitPrefab: {fileID: 0}
   gravityScale: 0.5
   maxFallSpeed: -2.5
   upwardGravityReduction: 0.8
@@ -160,3 +161,4 @@ MonoBehaviour:
   apexGravityMultiplier: 0.15
   upwardDrag: 0.1
   downwardDrag: 0.05
+  hasBeenSliced: 0

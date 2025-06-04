@@ -20,7 +20,7 @@ public class Fruit : MonoBehaviour
     public float upwardGravityReduction = 0.8f;
 
     [Tooltip("Duration to hover at apex")]
-    public float apexHoverTime = 5f;
+    public float apexHoverTime = 6f;
 
     [Tooltip("How much to reduce gravity at apex (0 = no gravity, 1 = full gravity)")]
     [Range(0f, 1f)]
@@ -114,7 +114,7 @@ public class Fruit : MonoBehaviour
         isAtApex = false;
 
         // normal gravity when falling
-        rb.AddForce(Physics.gravity * gravityScale * 0.5f, ForceMode.Acceleration);
+        rb.AddForce(Physics.gravity * gravityScale * 0.3f, ForceMode.Acceleration);
 
         // light air resistance when falling
         Vector3 dragForce = -velocity.normalized * downwardDrag * velocity.sqrMagnitude;

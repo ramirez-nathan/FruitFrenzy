@@ -13,7 +13,7 @@ public class Katana : MonoBehaviour
                 Debug.Log($"Sword hit fruit {other.name}");
                 //Debug.Log($"{gameObject.name} collision with {other.gameObject.name} | This layer: {gameObject.layer}, Other layer: {other.gameObject.layer}");
                 var fruitScript = other.gameObject.GetComponent<Fruit>();
-                if (!fruitScript.hasBeenSliced) fruitScript.Slice();
+                if (!fruitScript.hasBeenSliced) SliceFruit(fruitScript);
             }
         }
     }
@@ -26,8 +26,14 @@ public class Katana : MonoBehaviour
                 Debug.Log($"Sword hit fruit {other.name}");
                 //Debug.Log($"{gameObject.name} collision with {other.gameObject.name} | This layer: {gameObject.layer}, Other layer: {other.gameObject.layer}");
                 var fruitScript = other.gameObject.GetComponent<Fruit>();
-                if (!fruitScript.hasBeenSliced) fruitScript.Slice();
+                if (!fruitScript.hasBeenSliced) SliceFruit(fruitScript);
             }
         }
+    }
+
+    public void SliceFruit(Fruit fruitScript)
+    {
+
+        fruitScript.Slice();
     }
 }

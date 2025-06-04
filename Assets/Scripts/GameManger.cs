@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int fails = 0;
     public int highScore = 0;
+
+    public bool inComboWindow = false;
+    public float comboWindowTime = 0f;
+
     private void Awake()
     {
         Instance = this;
@@ -39,6 +43,9 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
+
+
+
     public void SwitchToPlayState()
     {
         State = GameState.Play;
