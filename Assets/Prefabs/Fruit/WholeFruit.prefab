@@ -154,6 +154,9 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   apexThreshold: 1
   isBomba: 0
+  sparkParticleEffect: {fileID: 0}
+  explosionEffect: {fileID: 0}
+  spawnSmokeEffect: {fileID: 3733804852468408544, guid: 6f61e1a92f527b24fbba1eb653e73ab0, type: 3}
   halfFruitPrefab: {fileID: 0}
   gravityScale: 0.5
   maxFallSpeed: -2.5
@@ -163,6 +166,7 @@ MonoBehaviour:
   upwardDrag: 0.1
   downwardDrag: 0.05
   hasBeenSliced: 0
+  isDead: 0
 --- !u!1 &6120768682697842134
 GameObject:
   m_ObjectHideFlags: 0

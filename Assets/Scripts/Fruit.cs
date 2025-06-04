@@ -16,6 +16,7 @@ public class Fruit : MonoBehaviour
     private ParticleSystem juiceParticleEffect;
     public ParticleSystem sparkParticleEffect;
     public GameObject explosionEffect;
+    public GameObject spawnSmokeEffect;
 
     public GameObject halfFruitPrefab;
 
@@ -46,6 +47,10 @@ public class Fruit : MonoBehaviour
         if (isBomba) sparkParticleEffect.Play();
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("WholeFruit"), LayerMask.NameToLayer("Bamboo"), true);
         juiceParticleEffect = GetComponentInChildren<ParticleSystem>();
+        var smoke = Instantiate(spawnSmokeEffect, transform.position, Quaternion.identity);
+        smoke.gameObject.SetActive(true);
+        smoke.GetComponent<ParticleSystem>().Play();
+        smoke.GetComponentInChildren<ParticleSystem>().Play();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
