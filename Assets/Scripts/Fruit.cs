@@ -35,12 +35,13 @@ public class Fruit : MonoBehaviour
     public float upwardDrag = 0.1f;
     public float downwardDrag = 0.05f;
     public bool hasBeenSliced = false;
+    public bool isDead = false;
     private void Awake()
     {
-        Debug.Assert(halfFruitPrefab != null,
-                 $"{name} spawned without a Half Fruit reference!");
+        //Debug.Assert(halfFruitPrefab != null,
+                 //$"{name} spawned without a Half Fruit reference!");
         rb = GetComponent<Rigidbody>();
-        if (halfFruitPrefab != null) Debug.Log($"{name} has correct reference to {halfFruitPrefab.name}");
+        if (halfFruitPrefab != null) //Debug.Log($"{name} has correct reference to {halfFruitPrefab.name}");
         gameObject.layer = LayerMask.NameToLayer("WholeFruit");
         if (isBomba) sparkParticleEffect.Play();
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("WholeFruit"), LayerMask.NameToLayer("Bamboo"), true);
@@ -49,14 +50,14 @@ public class Fruit : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         velocity = rb.linearVelocity;
-
+        if (GameManager.Instance.State == GameState.Lose) { isDead = true; }    
         if (velocity.y > 0) // Moving upward
         {
             ApplyUpwardPhysics();
@@ -145,7 +146,20 @@ public class Fruit : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.AddScore(1);
+
+            if (GameManager.Instance.inComboWindow)
+            {
+                GameManager.Instance.comboCount++;
+                Debug.Log("resetting Combo window");
+                GameManager.Instance.comboWindowTime = 0.5f; // reset the window
+            }
+            else
+            {
+                GameManager.Instance.comboCount++;
+                Debug.Log("Starting Combo window");
+                GameManager.Instance.inComboWindow = true; // enter combo window
+                GameManager.Instance.comboWindowTime = 0.5f; // reset the window
+            }
             AudioManager.instance.PlaySoundByName("FruitSlice", true); // play fruit slice sound
             SpawnHalfFruit(true); // is flipped
             SpawnHalfFruit(false); // isnt flipped
@@ -187,16 +201,7 @@ public class Fruit : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Plane"))
         {
-            if (!isBomba)
-            {
-                GameManager.Instance.AddFail();
-                if (GameManager.Instance.State == GameState.Play)
-                {
-                    AudioManager.instance.PlaySoundByName("Fail", false); // play fail sound
-                }
-            }
-
-            if (!isBomba && GameManager.Instance.State == GameState.Play)
+            if (!isBomba && GameManager.Instance.State == GameState.Play && !isDead)
             {
                 GameManager.Instance.AddFail();
                 AudioManager.instance.PlaySoundByName("Fail", false); // play fail sound

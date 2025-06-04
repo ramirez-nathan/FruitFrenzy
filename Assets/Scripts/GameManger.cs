@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject MenuCanvas;
     public GameObject GameOverCanvas;
     public GameObject FruitSpawner;
+    public GameObject ComboUI;
     private FruitSpawner fruitSpawnerScript;
 
     public int score = 0;
@@ -19,7 +20,11 @@ public class GameManager : MonoBehaviour
     public int highScore = 0;
 
     public bool inComboWindow = false;
-    public float comboWindowTime = 0f;
+    public int comboCount = 0;
+    public float comboWindowTime = 0.5f;
+
+    public Transform[] comboTransforms;
+    public Quaternion comboRotation = Quaternion.Euler(0f, 0f, 10f);
 
     private void Awake()
     {
@@ -30,6 +35,17 @@ public class GameManager : MonoBehaviour
             fruitSpawnerScript = FruitSpawner.GetComponent<FruitSpawner>();
         }
         SwitchToMenu();
+    }
+
+    public void Update()
+    {
+        comboWindowTime -= Time.deltaTime;
+        if (comboWindowTime < 0)
+        {
+            inComboWindow = false;
+            comboWindowTime = 0.5f;
+            CacheCombo();
+        }
     }
 
     private void LateUpdate()
@@ -44,11 +60,28 @@ public class GameManager : MonoBehaviour
         }
         if (State == GameState.Lose)
         {
+            CacheCombo();
             GameOver();
         }
     }
 
-
+    public void CacheCombo() 
+    {
+        if (comboCount >= 3)
+        {
+            var totalScore = comboCount * 2;
+            AddScore(totalScore);
+            Debug.Log("hit a combo!");
+            var comboUI = Instantiate(ComboUI, comboTransforms[0].position, comboRotation);
+            comboUI.GetComponent<ComboUI>().SetCombo(comboCount);
+            comboCount = 0;
+        }
+        else
+        {
+            AddScore(comboCount);
+            comboCount = 0;
+        }
+    }
 
     public void SwitchToPlayState()
     {
@@ -85,12 +118,14 @@ public class GameManager : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
+        if (score > highScore) highScore = score;
+        if (score >= 100) // I want to do every 100 pts, erase a fail
         UpdateScore(); // This will update both score UI and difficulty
 
         // Debug log to see difficulty changes
         if (fruitSpawnerScript != null && fruitSpawnerScript.useDynamicDifficulty)
         {
-            Debug.Log(fruitSpawnerScript.GetDifficultyInfo());
+            //Debug.Log(fruitSpawnerScript.GetDifficultyInfo());
         }
     }
     public void AddFail()
