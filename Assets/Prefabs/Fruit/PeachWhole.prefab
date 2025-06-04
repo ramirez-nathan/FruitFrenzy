@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2534964839176971238, guid: eca9c907d1189584a81ba5df4cfc0587, type: 3}
+    - target: {fileID: 2154784775468594660, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ddc513d1c8769cb479fffc011c654998, type: 2}
     - target: {fileID: 2314062144947215041, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -76,6 +80,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: -876546973899608171, guid: eca9c907d1189584a81ba5df4cfc0587, type: 3}
+    - target: {fileID: 6120768682697842134, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6896992334846094847, guid: d97f744b15c22fb488286372acc2d6c2, type: 3}
       propertyPath: halfFruit
       value: 

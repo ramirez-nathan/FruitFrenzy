@@ -12,6 +12,9 @@ public class Fruit : MonoBehaviour
     public float apexThreshold = 1f;
     [SerializeField] bool isBomba = false; // bomboclatt
 
+    // Fruit particles
+    private ParticleSystem juiceParticleEffect;
+
     public GameObject halfFruitPrefab;
 
     public float gravityScale = 0.5f;
@@ -34,9 +37,10 @@ public class Fruit : MonoBehaviour
     {
         Debug.Assert(halfFruitPrefab != null,
                  $"{name} spawned without a Half Fruit reference!");
-        if (halfFruitPrefab != null ) Debug.Log($"{name} has correct reference to {halfFruitPrefab.name}"); 
+        if (halfFruitPrefab != null) Debug.Log($"{name} has correct reference to {halfFruitPrefab.name}");
         gameObject.layer = LayerMask.NameToLayer("WholeFruit");
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("WholeFruit"), LayerMask.NameToLayer("Bamboo"), true);
+        juiceParticleEffect = GetComponentInChildren<ParticleSystem>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -134,6 +138,7 @@ public class Fruit : MonoBehaviour
             GameManager.Instance.AddScore(1);
             SpawnHalfFruit(true); // is flipped
             SpawnHalfFruit(false); // isnt flipped
+            juiceParticleEffect.Play();
         }
         // spawn 2 half fruits with exit velocity
 
