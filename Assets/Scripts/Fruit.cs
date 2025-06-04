@@ -10,7 +10,7 @@ public class Fruit : MonoBehaviour
     private float apexTimer = 0f;
     bool isAtApex = false;
     public float apexThreshold = 1f;
-    [SerializeField] bool isBomba = false; // bomboclatt
+    [SerializeField] public bool isBomba = false; // bomboclatt
 
     // Fruit particles
     private ParticleSystem juiceParticleEffect;

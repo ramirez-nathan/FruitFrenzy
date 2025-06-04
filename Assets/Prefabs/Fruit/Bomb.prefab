@@ -4981,6 +4981,7 @@ MonoBehaviour:
   upwardDrag: 0.1
   downwardDrag: 0.05
   hasBeenSliced: 0
+  isDead: 0
 --- !u!135 &7038520788447668516
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9812,8 +9813,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1d58a4a743483494798c2d86a3a558cf, type: 3}
-  m_Resource: {fileID: 8300000, guid: 1d58a4a743483494798c2d86a3a558cf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 77f87aa84ad1a1847b9b9fed486a4168, type: 3}
+  m_Resource: {fileID: 8300000, guid: 77f87aa84ad1a1847b9b9fed486a4168, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.499
   m_Pitch: 1

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public bool inComboWindow = false;
     public int comboCount = 0;
-    public float comboWindowTime = 0.5f;
+    public float comboWindowTime = 0.25f;
 
     public Transform[] comboTransforms;
     public Quaternion comboRotation = Quaternion.Euler(0f, 0f, 10f);
@@ -72,7 +72,13 @@ public class GameManager : MonoBehaviour
             var totalScore = comboCount * 2;
             AddScore(totalScore);
             Debug.Log("hit a combo!");
-            var comboUI = Instantiate(ComboUI, comboTransforms[0].position, comboRotation);
+            var position = comboTransforms[0].position + new Vector3(0, 0.2f, 1.53f);
+            Quaternion baseRot = comboTransforms[0].rotation;
+            // wipe out the yaw (Euler Y) component
+            Vector3 e = baseRot.eulerAngles;
+            e.y = 0f;
+            Quaternion rotation = Quaternion.Euler(e) * comboRotation;
+            var comboUI = Instantiate(ComboUI, position, rotation);
             comboUI.GetComponent<ComboUI>().SetCombo(comboCount);
             comboCount = 0;
         }
