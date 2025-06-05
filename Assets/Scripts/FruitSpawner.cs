@@ -28,10 +28,10 @@ public class FruitSpawner : MonoBehaviour
     public int baseMinFruits = 1; // Starting minimum fruits
     public int baseMaxFruits = 2; // Starting maximum fruits
     public int maxMinFruits = 3;  // Maximum minimum fruits (at high scores)
-    public int maxMaxFruits = 6;  // Maximum maximum fruits (at high scores)
+    public int maxMaxFruits = 5;  // Maximum maximum fruits (at high scores)
     public int scoreThreshold = 100; // Score needed to reach max difficulty
     public float baseBombProbability = 0.1f; // Starting bomb probability (10%)
-    public float maxBombProbability = 0.3f;  // Maximum bomb probability (30%)
+    public float maxBombProbability = 0.25f;  // Maximum bomb probability (30%)
 
     private Coroutine spawnCoroutine;
 

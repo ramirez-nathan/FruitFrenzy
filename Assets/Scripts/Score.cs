@@ -38,25 +38,45 @@ public class Score : MonoBehaviour
     {
         if (prevFails < GameManager.Instance.fails)
         {
-            Debug.Log("failed, adding x");
-            if (GameManager.Instance.fails > 2)
+            Debug.Log("adding fail");
+            if (GameManager.Instance.fails == 3)
             {
                 redX1.color = new Color(1f, 1f, 1f, 1f);
                 redX2.color = new Color(1f, 1f, 1f, 1f);
                 redX3.color = new Color(1f, 1f, 1f, 1f);
-                GameManager.Instance.State = GameState.Lose;   
+                GameManager.Instance.State = GameState.Lose;
             }
-            else if (GameManager.Instance.fails > 1)
+            else if (GameManager.Instance.fails == 2)
             {
-                redX1.color = new Color(1f, 1f, 1f, 1f); 
+                redX1.color = new Color(1f, 1f, 1f, 1f);
                 redX2.color = new Color(1f, 1f, 1f, 1f);
             }
-            else if (GameManager.Instance.fails > 0)
+            else if (GameManager.Instance.fails == 1)
             {
                 redX1.color = new Color(1f, 1f, 1f, 1f);
             }
         }
-        prevFails = GameManager.Instance.fails;
+        else if (prevFails > GameManager.Instance.fails)
+        {
+            Debug.Log("removing fail");
+            if (GameManager.Instance.fails == 3) // edge case 
+            {
+                GameManager.Instance.State = GameState.Lose;
+            }
+            if (GameManager.Instance.fails == 2) // was prev 3 fails
+            {
+                redX3.color = new Color(0f, 0f, 0f, 1f);
+            }
+            else if (GameManager.Instance.fails == 1) // was prev 2 fails
+            {
+                redX2.color = new Color(0f, 0f, 0f, 1f);
+            }
+            else if (GameManager.Instance.fails == 0) // was prev 1 fail
+            {
+                redX1.color = new Color(0f, 0f, 0f, 1f);
+            }
+        }
+        prevFails = GameManager.Instance.fails; 
     }
     public void ResetXs()
     {

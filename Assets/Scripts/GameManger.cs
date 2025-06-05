@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public bool inComboWindow = false;
     public int comboCount = 0;
     public float comboWindowTime = 0.25f;
+    public int removeFailGoal = 100;
 
     public Transform[] comboTransforms;
     public Quaternion comboRotation = Quaternion.Euler(0f, 0f, 10f);
@@ -94,8 +95,9 @@ public class GameManager : MonoBehaviour
         State = GameState.Play;
         FruitSpawner.gameObject.SetActive(true);    
         if (score > highScore) highScore = score;
-        score = 0;
+        score = 0; // FOR TESTING --- PLEASE CHANGE
         fails = 0;
+        removeFailGoal = 100;
         scoreScript.UpdateScore();
         InGameCanvas.SetActive(true);
         InGameCanvas.GetComponent<Score>().ResetXs();
@@ -125,6 +127,12 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         if (score > highScore) highScore = score;
+        if (score >= removeFailGoal)
+        {
+            if (fails > 0) fails--;
+            removeFailGoal += 100;
+            scoreScript.CheckForFailUpdate();
+        }
         UpdateScore(); // This will update both score UI and difficulty
 
         // Debug log to see difficulty changes
