@@ -51,6 +51,7 @@ public class Katana : MonoBehaviour
     {
         if (katanaId == 'r')
         {
+            Debug.Log("Right katana hit fruit");
             OVRInput.SetControllerVibration(1, amplitude, OVRInput.Controller.RTouch);
             if (fruitScript.isBomba) OVRInput.SetControllerVibration(1, amplitude * 0.5f, OVRInput.Controller.LTouch);
             if (!fruitScript.isBomba) StartCoroutine(VibrationTime(0.3f, false)); // if fruit then shorter vibration
@@ -58,6 +59,7 @@ public class Katana : MonoBehaviour
         }
         else if (katanaId == 'l')
         {
+            Debug.Log("Left katana hit fruit");
             OVRInput.SetControllerVibration(1, amplitude, OVRInput.Controller.LTouch);
             if (fruitScript.isBomba) OVRInput.SetControllerVibration(1, amplitude * 0.5f, OVRInput.Controller.RTouch); 
             if (!fruitScript.isBomba) StartCoroutine(VibrationTime(0.3f, false));
