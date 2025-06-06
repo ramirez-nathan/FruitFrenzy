@@ -1182,6 +1182,7 @@ MonoBehaviour:
   inComboWindow: 0
   comboCount: 0
   comboWindowTime: 0
+  removeFailGoal: 100
   comboTransforms:
   - {fileID: 2140388446}
   comboRotation: {x: 0, y: 0, z: 0.08715574, w: 0.9961947}
@@ -2832,6 +2833,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1531002115}
+    - target: {fileID: 2921293203076693378, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
+      propertyPath: m_text
+      value: FRUIT SABER
+      objectReference: {fileID: 0}
     - target: {fileID: 2921293203076693378, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
       propertyPath: m_fontSize
       value: 1.2
