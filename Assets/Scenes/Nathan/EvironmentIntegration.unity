@@ -851,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 2720107367358563400, guid: 3ac3e7be669ba174d82aba8fce738d46, type: 3}
       propertyPath: rayTransform
       value: 
-      objectReference: {fileID: 2097286043}
+      objectReference: {fileID: 1960963348}
     - target: {fileID: 4864658743084965929, guid: 3ac3e7be669ba174d82aba8fce738d46, type: 3}
       propertyPath: m_Name
       value: EventSystem
@@ -1182,6 +1182,7 @@ MonoBehaviour:
   inComboWindow: 0
   comboCount: 0
   comboWindowTime: 0
+  removeFailGoal: 100
   comboTransforms:
   - {fileID: 2140388446}
   comboRotation: {x: 0, y: 0, z: 0.08715574, w: 0.9961947}
@@ -1904,7 +1905,7 @@ Transform:
   m_GameObject: {fileID: 972804886}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0.145, y: 3, z: 0.084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2876,6 +2877,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3016607477592219809, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
+      propertyPath: pointer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3204425576267414576, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.229
@@ -3590,6 +3595,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2097286043}
     m_Modifications:
+    - target: {fileID: 3814318168928097374, guid: a04645d8876d1a448ad847390068b125, type: 3}
+      propertyPath: katanaId
+      value: 114
+      objectReference: {fileID: 0}
     - target: {fileID: 6413440490822234159, guid: a04645d8876d1a448ad847390068b125, type: 3}
       propertyPath: m_Name
       value: RightKatana
@@ -3659,6 +3668,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a04645d8876d1a448ad847390068b125, type: 3}
+--- !u!4 &1960963348 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6369577406040817275, guid: a04645d8876d1a448ad847390068b125, type: 3}
+  m_PrefabInstance: {fileID: 1960963346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2097286041
 PrefabInstance:
   m_ObjectHideFlags: 0
