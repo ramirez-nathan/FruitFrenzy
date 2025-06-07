@@ -31,6 +31,7 @@ public class Katana : MonoBehaviour
                 var fruitScript = other.gameObject.GetComponent<Fruit>();
                 if (!fruitScript.hasBeenSliced) SliceFruit(fruitScript);
             }
+
         }
     }
 
@@ -50,16 +51,18 @@ public class Katana : MonoBehaviour
     {
         if (katanaId == 'r')
         {
+            Debug.Log("Right katana hit fruit");
             OVRInput.SetControllerVibration(1, amplitude, OVRInput.Controller.RTouch);
             if (fruitScript.isBomba) OVRInput.SetControllerVibration(1, amplitude * 0.5f, OVRInput.Controller.LTouch);
-            if (!fruitScript.isBomba) StartCoroutine(VibrationTime(0.4f, false)); // if fruit then shorter vibration
+            if (!fruitScript.isBomba) StartCoroutine(VibrationTime(0.3f, false)); // if fruit then shorter vibration
             else StartCoroutine(VibrationTime(0.6f, false)); // else its bomb so longer vibration
         }
         else if (katanaId == 'l')
         {
+            Debug.Log("Left katana hit fruit");
             OVRInput.SetControllerVibration(1, amplitude, OVRInput.Controller.LTouch);
             if (fruitScript.isBomba) OVRInput.SetControllerVibration(1, amplitude * 0.5f, OVRInput.Controller.RTouch); 
-            if (!fruitScript.isBomba) StartCoroutine(VibrationTime(0.4f, false));
+            if (!fruitScript.isBomba) StartCoroutine(VibrationTime(0.3f, false));
             else StartCoroutine(VibrationTime(0.6f, false)); 
         }
         else Debug.LogWarning("Katana id is invalid!");
