@@ -2809,6 +2809,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1253621569535608397, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1327140980110520018, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2835,7 +2839,7 @@ PrefabInstance:
       objectReference: {fileID: 1531002115}
     - target: {fileID: 2921293203076693378, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
       propertyPath: m_text
-      value: FRUIT SABER
+      value: FRUIT FRENZY
       objectReference: {fileID: 0}
     - target: {fileID: 2921293203076693378, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
       propertyPath: m_fontSize
@@ -2847,7 +2851,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ade6cd8196b3007448b24e5da6d9c28a, type: 2}
     - target: {fileID: 2921293203076693378, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
       propertyPath: m_fontStyle
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2921293203076693378, guid: bbbfb8c022905ee42ab02b6205c037b1, type: 3}
       propertyPath: m_fontSizeBase
