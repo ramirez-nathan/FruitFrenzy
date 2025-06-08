@@ -1537,6 +1537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftKatana
       objectReference: {fileID: 0}
+    - target: {fileID: 6413440490822234159, guid: a04645d8876d1a448ad847390068b125, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9121142676094086057, guid: a04645d8876d1a448ad847390068b125, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

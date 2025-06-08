@@ -20,6 +20,7 @@ public class Katana : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (GameManager.Instance.State == GameState.Play)
