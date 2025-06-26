@@ -9,7 +9,7 @@ Fruit Frenzy VR is a fast-paced, arcade-style virtual reality game developed in 
 - Custom-built particle effects and slicing logic
 - In-game scoring system
 - Built and deployed on Meta Quest 2
-
+Check out the [Demo](https://drive.google.com/file/d/1oAES8PxBRCcuWLv7wenGbycEZS4SkD8Q/view)! 
 ## Visual Effects
 
 Fruit Frenzy VR includes custom-designed particle effects for immersive gameplay feedback:
